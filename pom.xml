@@ -8,5 +8,18 @@
     <artifactId>common</artifactId>
     <version>1.0.0</version>
 
+    <distributionManagement><!-- 远程部署管理信息 -->
+        <!-- 项目部署到私服配置 id和上面server中配置的id一致-->
+        <repository><!--部署项目产生的构件到远程仓库需要的信息 -->
+            <id>nexus_release</id>
+            <name>maven-releases</name>
+            <url>http://192.168.10.130:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository><!-- 如果没有配置该元素，默认部署到repository元素配置的仓库 -->
+            <id>nexus_snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
